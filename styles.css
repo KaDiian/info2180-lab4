@@ -1,0 +1,12 @@
+body{
+    background-color: grey;
+}
+header{
+    font-size: 30px;
+    font-weight: bold;
+}
+Button{
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: grey;
+}
