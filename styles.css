@@ -1,12 +1,37 @@
 body{
-    background-color: grey;
+    margin: 0;
+    display: grid;
+    grid-template: 30% 70%;
+    height:100%;
+    font-family: 'Times New Roman', Times, serif;
 }
-header{
+#container{
+    margin: 230px;
+    margin-top: 0px;
+}
+#header{
+    background-color: rgb(86, 133, 194);
+}
+#header h1{
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
     font-size: 30px;
     font-weight: bold;
 }
-Button{
+button{
+    color: white;
     padding-left: 10px;
     padding-right: 10px;
-    background-color: grey;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background-color: rgb(221, 17, 17);
+    border-radius: 5px;
+}
+input{
+    padding-right: 500px;
+}
+h5{
+    color: red;
+    text-transform: uppercase;
 }

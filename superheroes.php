@@ -1,5 +1,12 @@
 <?php
-
+$query = $_REQUEST['q'];
+//Sanitizing
+$query = trim($query);
+$query = stripslashes($query);
+$query = htmlspecialchars($query);
+$query = strtolower($query);
+filter_var($query, FILTER_SANITIZE_STRING);
+$checkResults =0;
 $superheroes = [
   [
       "id" => 1,
@@ -64,9 +71,25 @@ $superheroes = [
 ];
 
 ?>
-
+<?php
+if($query == ''){
+?>
 <ul>
 <?php foreach ($superheroes as $superhero): ?>
   <li><?= $superhero['alias']; ?></li>
 <?php endforeach; ?>
 </ul>
+<?php
+}else{
+    foreach($superheroes as $superhero){
+        if(strtolower($superhero['alias']) == $query or strtolower($superhero['name']) == $query){
+            echo "<h3>".strtoupper($superhero["alias"])."</h3>";
+            echo "<h4> A.K.A ".strtoupper($superhero["name"])."</h4>";
+            echo "<p>".$superhero["biography"]."</p>";
+            $checkResults = 1;
+        }
+    }
+    if ($checkResults == 0){
+        echo "<h5> Superhero not Found </h5>";
+    }
+}
